@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meme Submit</title>
+  </head>
+  <body>
+    <!-- Navbar starts -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../">Meme Stream</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="submit "
+                >Submit Meme</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar ends -->
+    <!-- Container starts -->
+    <br /><br />
+    <div class="container">
+      <h1 class="display-6 text-center">Submit Meme</h1>
+      <br /><br />
+      <center>
+        <form action="/meme" method="post" class="row g-3">
+          <div class="col-12">
+            <label for="name" class="form-label">Meme Owner</label>
+            <input type="text" class="form-control" id="name" name="name" />
+          </div>
+          <div class="col-12">
+            <label for="caption" class="form-label">Caption</label>
+            <input
+              type="text"
+              class="form-control"
+              id="caption"
+              name="caption"
+            />
+          </div>
+          <div class="col-12">
+            <label for="url" class="form-label">Meme URL</label>
+            <input type="url" class="form-control" id="url" name="url" />
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit Meme</button>
+          </div>
+        </form>
+      </center>
+    </div>
+    <!-- Container Ends -->
+  </body>
+</html>

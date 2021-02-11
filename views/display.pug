@@ -1,0 +1,49 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    // CSS only
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1' crossorigin='anonymous')
+    // JavaScript Bundle with Popper
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js' integrity='sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW' crossorigin='anonymous')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Meme Stream
+  body
+    // Navbar starts
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      .container-fluid
+        a.navbar-brand(href='#') Meme Stream
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='submit') Submit Meme
+    // Navbar ends
+    // Container starts
+    br
+    br
+    .container
+      h1.display-5.text-center Recent memes submission
+      br
+      br
+      center
+        .cardlist
+        - for(let item of items)
+          .card(style='width: 18rem')
+            img.card-img-top(src= item.url alt='...' width=600)
+            .card-body
+              h5.card-title= item.caption
+              p.card-text
+                | Submitted by 
+                b(style='color: crimson')=  item.name
+                
+
+    // Container Ends
+
+
+//- - for(let item of items)
+//-                 span Name 
+//-                 span(style="color:red")= item.name
+//-                 br                
