@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
         const db = client.db('meme')
         const col = db.collection('data')
         // var arr;
-        col.find({}).limit(100).toArray(function (err, result) {
+        col.find({}).sort({ date: -1 }).limit(100).toArray(function (err, result) {
             if (err) throw err;
             var arr = result;
             res.render('display', { items: arr });
@@ -62,7 +62,7 @@ app.post('/meme', function (req, res) {
         const col = db.collection('data')
         const uid = uniqid();
         fetch.id = uid;
-
+        fetch.date = new Date(Date.now()).toISOString();
         col.insertOne(fetch, function (err, doc) {
             if (err) throw err;
             const id = { "id": fetch.id };
@@ -85,7 +85,7 @@ app.get('/meme', function (req, res) {
 
         const db = client.db('meme')
         const col = db.collection('data')
-        col.find({}, { projection: { _id: 0 } }).limit(100).toArray(function (err, result) {
+        col.find({}, { projection: { _id: 0, date: 0 } }).sort({ date: -1 }).limit(100).toArray(function (err, result) {
             if (err) throw err;
             var arr = result;
             res.json(arr);
@@ -106,7 +106,7 @@ app.get('/meme/:id/', function (req, res, err) {
 
         const db = client.db('meme')
         const col = db.collection('data')
-        col.find({ id: par }, { projection: { _id: 0 } }).toArray(function (err, result) {
+        col.find({ id: par }, { projection: { _id: 0, date: 0 } }).toArray(function (err, result) {
             if (err) throw err;
             var arr = result;
             if (arr.length == 1) { res.json(arr); }
