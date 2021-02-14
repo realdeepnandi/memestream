@@ -92,7 +92,7 @@ app.get('/meme', function (req, res) {
         });
     })
 })
-app.listen(8012)
+
 /////////////////////////////////meme endpoint (GET) [ends]////////////////////////////////////////////////////
 
 
@@ -121,3 +121,6 @@ app.get('/meme/:id/', function (req, res, err) {
 })
 // app.listen(8012)
 /////////////////////////////////meme endpoint (GET) [ends]////////////////////////////////////////////////////
+
+
+app.listen(8081)
