@@ -15,3 +15,4 @@
 2. `cd memestream`
 3. `npm install`
 4. `npm run dev` 
+5.  Server is running at http://localhost:8081
