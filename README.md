@@ -2,7 +2,7 @@
 
 ## Endpoints
 1. https://meme-stream-2021.herokuapp.com/meme - (GET) For fetching all memes
-2. https://meme-stream-2021.herokuapp.com/meme/{id} - (GET) For fetching all memes with id
+2. https://meme-stream-2021.herokuapp.com/meme/{id} - (GET) For fetching meme with id (replace id with meme id)
 
 ## Requirements
 1. Nodejs
