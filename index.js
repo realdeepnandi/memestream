@@ -122,5 +122,5 @@ app.get('/meme/:id/', function (req, res, err) {
 // app.listen(8012)
 /////////////////////////////////meme endpoint (GET) [ends]////////////////////////////////////////////////////
 
-
-app.listen(8081)
+var port = 8081 || process.env.PORT
+app.listen(port)
